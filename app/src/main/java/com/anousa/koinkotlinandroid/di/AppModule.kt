@@ -8,5 +8,5 @@ import org.koin.dsl.module.module
 val appModule = module {
     factory { Wheel() }
     factory { Engine() }
-    factory { Car(get(), get()) }
+    single { Car(get(), get()) }
 }
