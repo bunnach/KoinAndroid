@@ -1,4 +1,5 @@
 package com.anousa.koinkotlinandroid.model
 
-class Engine {
+interface Engine {
+    fun start()
 }

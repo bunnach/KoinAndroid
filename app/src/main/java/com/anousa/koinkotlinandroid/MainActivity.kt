@@ -19,8 +19,6 @@ class MainActivity : AppCompatActivity() {
         val car1 = mainActivityScope.get<Car>()
         car1.drive()
 
-        val car2 = mainActivityScope.get<Car>()
-        car2.drive()
     }
 
     override fun onDestroy() {
