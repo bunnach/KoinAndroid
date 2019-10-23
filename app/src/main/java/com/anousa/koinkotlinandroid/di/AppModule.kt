@@ -2,6 +2,8 @@ package com.anousa.koinkotlinandroid.di
 
 import com.anousa.koinkotlinandroid.constants.Constants
 import com.anousa.koinkotlinandroid.model.*
+import com.anousa.koinkotlinandroid.preference.MyPreference
+import org.koin.android.ext.koin.androidContext
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
@@ -17,4 +19,7 @@ val appModule = module {
     }
     single { Driver() }
     factory { provideEngine(get()) }
+
+    factory { MyPreference(androidContext()) }
+//    factory { MyPreference(androidApplication()) }
 }
