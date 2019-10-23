@@ -1,12 +1,13 @@
 package com.anousa.koinkotlinandroid
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.anousa.koinkotlinandroid.constants.Constants
 import com.anousa.koinkotlinandroid.model.Car
 import com.anousa.koinkotlinandroid.model.PetrolEngine
 import com.anousa.koinkotlinandroid.preference.MyPreference
+import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.getKoin
 import org.koin.android.ext.android.inject
 import org.koin.core.qualifier.named
@@ -23,13 +24,16 @@ class MainActivity : AppCompatActivity() {
 
         getKoin().setProperty(PetrolEngine.horsePower_ID, 99999)
 
-        myPreference.setName("Anounsa")
+        myPreference.setName("Anounsa KHHHH")
 
         val car1 = mainActivityScope.get<Car>()
         car1.drive()
 
-        Toast.makeText(this, "Name ${myPreference.getName()}", Toast.LENGTH_LONG).show()
+//        Toast.makeText(this, "Name ${myPreference.getName()}", Toast.LENGTH_LONG).show()
 
+        btnSecondActivity.setOnClickListener {
+            startActivity(Intent(this, SecondActivity::class.java))
+        }
     }
 
     override fun onDestroy() {
