@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.anousa.koinkotlinandroid.constants.Constants
 import com.anousa.koinkotlinandroid.model.Car
+import com.anousa.koinkotlinandroid.model.PetrolEngine
 import com.anousa.koinkotlinandroid.preference.MyPreference
 import org.koin.android.ext.android.getKoin
 import org.koin.android.ext.android.inject
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        getKoin().setProperty(PetrolEngine.horsePower_ID, 99999)
 
         myPreference.setName("Anounsa")
 

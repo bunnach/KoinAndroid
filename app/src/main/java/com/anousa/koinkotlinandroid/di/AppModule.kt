@@ -12,7 +12,7 @@ val appModule = module {
     fun provideEngine(petrolEngine: PetrolEngine): Engine {
         return  petrolEngine
     }
-    factory { PetrolEngine() }
+    factory { PetrolEngine(getProperty(PetrolEngine.horsePower_ID)) }
     factory { Wheel() }
     scope(named(Constants.ACTIVITY_SCOPE)) {
         scoped { Car(get(), get(), get()) }
